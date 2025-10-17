@@ -895,7 +895,12 @@
     </div>
 
     <script>
-        const studentsData = [        
+        const studentsData = 
+            
+  
+        
+        let charts = {};[
+
   {
     "A": "2025",
     "B": "席强玟",
@@ -27897,8 +27902,6 @@
     "R": "15183525294"
   }
 ]
-        let charts = {};
-
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
         
@@ -27948,9 +27951,9 @@
                 }
             });
             
-            // 初始化搜索，显示所有学生
-            displayResults(studentsData, '');
-            document.getElementById('resultCount').textContent = `共找到 ${studentsData.length} 名学生`;
+            // 初始化搜索，不显示任何学生
+            document.getElementById('resultsContainer').innerHTML = '<div class="no-results"><div class="no-results-icon">🔍</div><p>请输入关键词搜索学生</p></div>';
+            document.getElementById('resultCount').textContent = '';
         }
 
         function highlightText(text, searchTerm) {
