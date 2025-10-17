@@ -766,7 +766,10 @@
                         <div class="card-header">
                             <h3 class="card-title">性别分布</h3>
                             <div class="card-actions">
-                                
+                                <button class="btn btn-outline" id="refreshData">
+                                    <i class="fas fa-sync-alt"></i>
+                                    刷新数据
+                                </button>
                             </div>
                         </div>
                         
@@ -895,12 +898,8 @@
     </div>
 
     <script>
-        const studentsData = 
+        const studentsData = [
             
-  
-        
-        let charts = {};[
-
   {
     "A": "2025",
     "B": "席强玟",
@@ -5640,7 +5639,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "18384281735"
-  }，
+  },
   {
     "A": "2025",
     "B": "朱志文",
@@ -5660,7 +5659,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "15884493612"
-  }，
+  },
   {
     "A": "2025",
     "B": "诸威杰",
@@ -5680,7 +5679,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "19938211909"
-  }，
+  },
   {
     "A": "2025",
     "B": "殷龙宇",
@@ -5700,7 +5699,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "13458595636"
-  }，
+  },
   {
     "A": "2025",
     "B": "羊涵",
@@ -7740,7 +7739,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "13568894088"
-  }，
+  },
   {
     "A": "2025",
     "B": "王玥琛",
@@ -7760,7 +7759,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "15682351763"
-  }，
+  },
   {
     "A": "2025",
     "B": "黄东来",
@@ -7780,7 +7779,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "18384769663"
-  }，
+  },
   {
     "A": "2025",
     "B": "王俊杰",
@@ -7800,7 +7799,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "17781591109"
-  }，
+  },
   {
     "A": "2025",
     "B": "杨宇翔",
@@ -10720,7 +10719,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "13340762409"
-  }，
+  },
   {
     "A": "2025",
     "B": "康星月",
@@ -10740,7 +10739,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "18227034016"
-  }，
+  },
   {
     "A": "2025",
     "B": "邓舒容",
@@ -10760,7 +10759,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "18200373017"
-  }，
+  },
   {
     "A": "2025",
     "B": "赵毅",
@@ -10780,7 +10779,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "15984969230"
-  }，
+  },
   {
     "A": "2025",
     "B": "袁野",
@@ -10800,7 +10799,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "15928536742"
-  }，
+  },
   {
     "A": "2025",
     "B": "蒋应杰",
@@ -13980,7 +13979,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "19198948669"
-  }，
+  },
   {
     "A": "2025",
     "B": "曾怡",
@@ -14000,7 +13999,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "14708275791"
-  }，
+  },
   {
     "A": "2025",
     "B": "熊全莉",
@@ -14020,7 +14019,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "15183276259"
-  }，
+  },
   {
     "A": "2025",
     "B": "蹇明江",
@@ -14040,7 +14039,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "17882254836"
-  }，
+  },
   {
     "A": "2025",
     "B": "刘相兵",
@@ -14060,7 +14059,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "15808111293"
-  }，
+  },
   {
     "A": "2025",
     "B": "罗杉",
@@ -17780,7 +17779,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "15760009460"
-  }，
+  },
   {
     "A": "2025",
     "B": "陈顺帆",
@@ -17800,7 +17799,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "18161166312"
-  }，
+  },
   {
     "A": "2025",
     "B": "马榕",
@@ -17820,7 +17819,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "15378532837"
-  }，
+  },
   {
     "A": "2025",
     "B": "罗壅金珠",
@@ -17840,7 +17839,7 @@
     "P": "藏族",
     "Q": "1年级",
     "R": "15390163700"
-  }，
+  },
   {
     "A": "2025",
     "B": "李柠宏",
@@ -20200,7 +20199,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "13982832463"
-  }，
+  },
   {
     "A": "2025",
     "B": "杨鸿瑞",
@@ -20220,7 +20219,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "15182936850"
-  }，
+  },
   {
     "A": "2025",
     "B": "卢康",
@@ -20240,7 +20239,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "19938782129"
-  }，
+  },
   {
     "A": "2025",
     "B": "王沁鑫",
@@ -20260,7 +20259,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "18384803150"
-  }，
+  },
   {
     "A": "2025",
     "B": "王攀鑫",
@@ -21000,7 +20999,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "13388245701"
-  }，
+  },
   {
     "A": "2025",
     "B": "兰俊杰",
@@ -21020,7 +21019,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "18982687646"
-  }，
+  },
   {
     "A": "2025",
     "B": "刘淑慧",
@@ -21040,7 +21039,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "18227173930"
-  }，
+  },
   {
     "A": "2025",
     "B": "杨婧铃",
@@ -21060,7 +21059,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "18190777551"
-  }，
+  },
   {
     "A": "2025",
     "B": "谢雨妍",
@@ -21080,7 +21079,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "18117860892"
-  }，
+  },
   {
     "A": "2025",
     "B": "周若瑜",
@@ -22860,7 +22859,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "15298081778"
-  }，
+  },
   {
     "A": "2025",
     "B": "李志鹏",
@@ -22880,7 +22879,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "18008243900"
-  }，
+  },
   {
     "A": "2025",
     "B": "李佳哲",
@@ -22900,7 +22899,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "15760698956"
-  }，
+  },
   {
     "A": "2025",
     "B": "张明宇",
@@ -22920,7 +22919,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "19982720816"
-  }，
+  },
   {
     "A": "2025",
     "B": "刘益玲",
@@ -22940,7 +22939,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "15891459965"
-  }，
+  },
   {
     "A": "2025",
     "B": "祖丽菲热·阿克木",
@@ -26866,7 +26865,7 @@
     "B": "王鑫",
     "C": "511623200310281157",
     "D": "2023202030226",
-    "E": "电子科技大学成都学院"，
+    "E": "电子科技大学成都学院",
     "F": "计算机学院",
     "G": "软件工程",
     "H": "钟玥",
@@ -26874,19 +26873,19 @@
     "J": "23级软工2班（专升本）",
     "K": "2025-09-01",
     "L": "5",
-    "M": "本科"，
+    "M": "本科",
     "N": "男",
-    "O": "2003-10-28"，
-    "P": "汉族"，
+    "O": "2003-10-28",
+    "P": "汉族",
     "Q": "1年级",
     "R": "17528102878"
   },
   {
     "A": "2025",
-    "B": "曾祯"，
-    "C": "510724200306235220"，
+    "B": "曾祯",
+    "C": "510724200306235220",
     "D": "2023202030209",
-    "E": "电子科技大学成都学院"，
+    "E": "电子科技大学成都学院",
     "F": "计算机学院",
     "G": "软件工程",
     "H": "钟玥",
@@ -26900,7 +26899,7 @@
     "P": "汉族",
     "Q": "1年级",
     "R": "17313625305"
-  }，
+  },
   {
     "A": "2025",
     "B": "梁婷婷",
@@ -26916,7 +26915,7 @@
     "L": "5",
     "M": "本科",
     "N": "女",
-    "O": "2003-04-04"，
+    "O": "2003-04-04",
     "P": "汉族",
     "Q": "1年级",
     "R": "19186852460"
@@ -27902,6 +27901,9 @@
     "R": "15183525294"
   }
 ]
+        
+        let charts = {};
+
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
         
@@ -27942,7 +27944,7 @@
             updateStatistics();
             renderCharts();
             
-            
+            document.getElementById('refreshData').addEventListener('click', refreshData);
             document.getElementById('searchButton').addEventListener('click', searchStudent);
             
             document.getElementById('studentSearch').addEventListener('keypress', function(e) {
@@ -28187,15 +28189,15 @@
             const femaleCount = studentsData.filter(s => s.N === '女').length;
             
             charts.genderChart = new Chart(genderCtx, {
-                输入: 'doughnut'，
+                type: 'doughnut',
                 data: {
                     labels: ['男生', '女生'],
                     datasets: [{
-                        data: [maleCount， femaleCount],
+                        data: [maleCount, femaleCount],
                         backgroundColor: ['#4285f4', '#ea4335'],
                         borderWidth: 1
                     }]
-                }，
+                },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
@@ -28205,7 +28207,7 @@
                             labels: {
                                 color: getComputedStyle(document.body).getPropertyValue('--text-color')
                             }
-                        }，
+                        },
                         title: {
                             display: true,
                             text: '性别分布',
@@ -28229,7 +28231,7 @@
             const majorData = Object.values(majorCounts);
             
             charts.majorChart = new Chart(majorCtx, {
-                输入: 'pie'，
+                type: 'pie',
                 data: {
                     labels: majorLabels,
                     datasets: [{
@@ -28237,7 +28239,7 @@
                         backgroundColor: ['#4285f4', '#34a853', '#f9ab00'],
                         borderWidth: 1
                     }]
-                }，
+                },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
@@ -28247,7 +28249,7 @@
                             labels: {
                                 color: getComputedStyle(document.body).getPropertyValue('--text-color')
                             }
-                        }，
+                        },
                         title: {
                             display: true,
                             text: '专业分布',
@@ -28263,7 +28265,7 @@
             const majorDetailCtx = document.getElementById('majorDistributionDetailChart').getContext('2d');
             
             charts.majorDetailChart = new Chart(majorDetailCtx, {
-                输入: 'bar',
+                type: 'bar',
                 data: {
                     labels: majorLabels,
                     datasets: [{
@@ -28345,9 +28347,9 @@
                             }
                         },
                         title: {
-                            display: true，
-                            text: '年级分布'，
-                            color: getComputedStyle(document。body)。getPropertyValue('--text-color')，
+                            display: true,
+                            text: '年级分布',
+                            color: getComputedStyle(document.body).getPropertyValue('--text-color'),
                             font: {
                                 size: 16
                             }
@@ -28358,7 +28360,7 @@
             
             const ethnicCtx = document.getElementById('ethnicDistributionChart').getContext('2d');
             const ethnicCounts = {};
-            studentsData。forEach(student => {
+            studentsData.forEach(student => {
                 const ethnic = student.P;
                 ethnicCounts[ethnic] = (ethnicCounts[ethnic] || 0) + 1;
             });
@@ -28366,8 +28368,8 @@
             const ethnicLabels = Object.keys(ethnicCounts);
             const ethnicData = Object.values(ethnicCounts);
             
-            charts。ethnicChart = new Chart(ethnicCtx， {
-                输入: 'doughnut',
+            charts.ethnicChart = new Chart(ethnicCtx, {
+                type: 'doughnut',
                 data: {
                     labels: ethnicLabels,
                     datasets: [{
@@ -28377,18 +28379,18 @@
                     }]
                 },
                 options: {
-                    responsive: true，
-                    maintainAspectRatio: false，
+                    responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: {
                             position: 'bottom',
                             labels: {
                                 color: getComputedStyle(document.body).getPropertyValue('--text-color')
                             }
-                        }，
+                        },
                         title: {
-                            display: true，
-                            text: '民族分布'，
+                            display: true,
+                            text: '民族分布',
                             color: getComputedStyle(document.body).getPropertyValue('--text-color'),
                             font: {
                                 size: 16
@@ -28408,4 +28410,4 @@
         document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
-        </html>
+</html>
