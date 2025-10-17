@@ -55,7 +55,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Roboto', Tahoma， Geneva, Verdana， sans-serif;
+            font-family: 'Segoe UI', 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
@@ -66,14 +66,14 @@
             transition: background-color 0.3s, color 0.3s;
         }
         
-        。container {
+        .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
         
         header {
-            background: linear-gradient(135deg， var(--primary), var(--primary-dark));
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             padding: 25px 0;
             box-shadow: var(--shadow);
@@ -90,23 +90,23 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg， var(--secondary), var(--success));
+            background: linear-gradient(90deg, var(--secondary), var(--success));
         }
         
-        。header-content {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 30px;
         }
         
-        。logo {
+        .logo {
             display: flex;
             align-items: center;
             gap: 15px;
         }
         
-        。logo-icon {
+        .logo-icon {
             background: rgba(255,255,255,0.15);
             width: 50px;
             height: 50px;
@@ -118,13 +118,13 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         
-        。logo h1 {
+        .logo h1 {
             font-size: 28px;
             font-weight: 700;
         }
         
-        。version {
-            background: rgba(255，255，255,0.15);
+        .version {
+            background: rgba(255,255,255,0.15);
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 13px;
@@ -132,41 +132,41 @@
             backdrop-filter: blur(10px);
         }
         
-        。header-controls {
+        .header-controls {
             display: flex;
             gap: 15px;
             align-items: center;
         }
         
-        。status-bar {
+        .status-bar {
             display: flex;
             gap: 20px;
             font-size: 14px;
         }
         
-        。status-item {
+        .status-item {
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255，255，255,0.15);
+            background: rgba(255,255,255,0.15);
             padding: 8px 15px;
             border-radius: 20px;
             backdrop-filter: blur(10px);
         }
         
-        。status-dot {
+        .status-dot {
             width: 10px;
             height: 10px;
             border-radius: 50%;
             box-shadow: 0 0 8px currentColor;
         }
         
-        。status-online { background-color: var(--success); }
-        。status-warning { background-color: var(--warning); }
-        。status-offline { background-color: var(--danger); }
+        .status-online { background-color: var(--success); }
+        .status-warning { background-color: var(--warning); }
+        .status-offline { background-color: var(--danger); }
         
-        。theme-toggle {
-            background: rgba(255，255,255,0.15);
+        .theme-toggle {
+            background: rgba(255,255,255,0.15);
             border: none;
             width: 44px;
             height: 44px;
@@ -181,17 +181,17 @@
             transition: transform 0.3s;
         }
         
-        。theme-toggle:hover {
+        .theme-toggle:hover {
             transform: scale(1.1);
         }
         
-        。main-content {
+        .main-content {
             display: grid;
             grid-template-columns: 280px 1fr;
             gap: 25px;
         }
         
-        。sidebar {
+        .sidebar {
             background: var(--card-bg);
             border-radius: 12px;
             box-shadow: var(--shadow);
@@ -200,15 +200,15 @@
             transition: background-color 0.3s, box-shadow 0.3s;
         }
         
-        。nav-menu {
+        .nav-menu {
             list-style: none;
         }
         
-        。nav-item {
+        .nav-item {
             margin-bottom: 8px;
         }
         
-        。nav-link {
+        .nav-link {
             display: flex;
             align-items: center;
             gap: 12px;
@@ -646,27 +646,6 @@
         .progress-secondary { background-color: var(--secondary); }
         .progress-success { background-color: var(--success); }
         
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-muted);
-        }
-        
-        .loading-spinner {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            border: 5px solid var(--border-color);
-            border-radius: 50%;
-            border-top-color: var(--primary);
-            animation: spin 1s ease-in-out infinite;
-            margin-bottom: 15px;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
         @media (max-width: 1024px) {
             .main-content {
                 grid-template-columns: 1fr;
@@ -723,7 +702,7 @@
                         </div>
                         <div class="status-item">
                             <div class="status-dot status-warning"></div>
-                            <span>数据加载中...</span>
+                            <span>数据已加载</span>
                         </div>
                     </div>
                     <button class="theme-toggle" id="themeToggle">
@@ -786,12 +765,7 @@
                             
                             <div id="resultCount" class="result-count"></div>
                             
-                            <div id="resultsContainer" class="results-container">
-                                <div class="loading">
-                                    <div class="loading-spinner"></div>
-                                    <p>正在从服务器加载数据...</p>
-                                </div>
-                            </div>
+                            <div id="resultsContainer" class="results-container"></div>
                             
                             <div class="student-details" id="studentDetails">
                                 <!-- 学生详细信息将在这里显示 -->
@@ -885,7 +859,12 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">专业分布详情</h3>
-                            <!-- 移除了导出数据按钮 -->
+                            <div class="card-actions">
+                                <button class="btn btn-outline" id="exportChartData">
+                                    <i class="fas fa-download"></i>
+                                    导出数据
+                                </button>
+                            </div>
                         </div>
                         
                         <div class="chart-container">
@@ -916,8 +895,8 @@
     </div>
 
     <script>
-        // 学生数据变量 - 将从服务器加载
-        let studentsData = [];
+        // 学生数据变量 - 请在此处填充您的学生数据
+        const studentsData = []; // 这里填入您的学生数据
         
         // 全局变量
         let charts = {};
@@ -927,13 +906,13 @@
         const body = document.body;
         
         themeToggle.addEventListener('click', () => {
-            const currentTheme = body。getAttribute('data-theme');
+            const currentTheme = body.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            body。setAttribute('data-theme', newTheme);
+            body.setAttribute('data-theme', newTheme);
             
             // 更新图标
             const icon = themeToggle.querySelector('i');
-            icon。className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+            icon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
             
             // 重新渲染图表以适应新主题
             renderCharts();
@@ -943,16 +922,16 @@
         const navLinks = document.querySelectorAll('.nav-link');
         const tabContents = document.querySelectorAll('.tab-content');
         
-        navLinks。forEach(link => {
-            link。addEventListener('click'， (e) => {
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
                 e.preventDefault();
                 
                 // 移除所有活动状态
-                navLinks。forEach(item => item.classList.remove('active'));
-                tabContents。forEach(content => content.classList.remove('active'));
+                navLinks.forEach(item => item.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
                 
                 // 添加当前活动状态
-                link。classList.add('active');
+                link.classList.add('active');
                 const tabId = link.getAttribute('data-tab');
                 document.getElementById(tabId).classList.add('active');
                 
@@ -965,60 +944,14 @@
             });
         });
 
-        // 从服务器加载数据
-        async function loadDataFromServer() {
-            try {
-                // 更新状态为加载中
-                document.querySelector('.status-item .status-dot').className = 'status-dot status-warning';
-                document.querySelector('.status-item span').textContent = '数据加载中...';
-                
-                // 从你的服务器加载数据
-                const response = await fetch('http://47.92.50.167:8080/api/students');
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                
-                studentsData = await response.json();
-                
-                // 更新状态为已加载
-                document.querySelector('.status-item .status-dot').className = 'status-dot status-online';
-                document.querySelector('.status-item span').textContent = '数据已加载';
-                
-                // 初始化应用
-                updateStatistics();
-                renderCharts();
-                
-                // 移除加载提示
-                const resultsContainer = document.getElementById('resultsContainer');
-                if (resultsContainer.querySelector('.loading')) {
-                    resultsContainer.innerHTML = '';
-                }
-                
-                console.log('数据加载成功，共加载', studentsData.length, '条记录');
-            } catch (error) {
-                console.error('加载数据失败:', error);
-                
-                // 更新状态为错误
-                document.querySelector('.status-item .status-dot').className = 'status-dot status-offline';
-                document.querySelector('.status-item span').textContent = '数据加载失败';
-                
-                // 显示错误信息
-                const resultsContainer = document.getElementById('resultsContainer');
-                resultsContainer.innerHTML = `
-                    <div class="no-results">
-                        <div class="no-results-icon">❌</div>
-                        <p>数据加载失败，请检查网络连接</p>
-                        <p style="font-size: 0.8em; margin-top: 10px;">错误信息: ${error.message}</p>
-                    </div>
-                `;
-            }
-        }
-
         // 初始化
         function init() {
+            updateStatistics();
+            renderCharts();
+            
             // 添加事件监听器
             document.getElementById('refreshData').addEventListener('click', refreshData);
+            document.getElementById('exportChartData').addEventListener('click', exportData);
             document.getElementById('searchButton').addEventListener('click', searchStudent);
             
             // 添加回车键搜索支持
@@ -1027,9 +960,6 @@
                     searchStudent();
                 }
             });
-            
-            // 从服务器加载数据
-            loadDataFromServer();
         }
 
         // 高亮显示匹配的文本
@@ -1303,8 +1233,8 @@
                         },
                         title: {
                             display: true,
-                            text: '性别分布'，
-                            color: getComputedStyle(document。body)。getPropertyValue('--text-color'),
+                            text: '性别分布',
+                            color: getComputedStyle(document.body).getPropertyValue('--text-color'),
                             font: {
                                 size: 16
                             }
@@ -1316,7 +1246,7 @@
             // 专业分布图表
             const majorCtx = document.getElementById('majorDistributionChart').getContext('2d');
             const majorCounts = {};
-            studentsData。forEach(student => {
+            studentsData.forEach(student => {
                 const major = student.G;
                 majorCounts[major] = (majorCounts[major] || 0) + 1;
             });
@@ -1324,16 +1254,16 @@
             const majorLabels = Object.keys(majorCounts);
             const majorData = Object.values(majorCounts);
             
-            charts。majorChart = new Chart(majorCtx, {
-                输入: 'pie',
+            charts.majorChart = new Chart(majorCtx, {
+                type: 'pie',
                 data: {
                     labels: majorLabels,
                     datasets: [{
                         data: majorData,
-                        backgroundColor: ['#4285f4', '#34a853'， '#f9ab00']，
+                        backgroundColor: ['#4285f4', '#34a853', '#f9ab00'],
                         borderWidth: 1
                     }]
-                }，
+                },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
@@ -1346,8 +1276,8 @@
                         },
                         title: {
                             display: true,
-                            text: '专业分布'，
-                            color: getComputedStyle(document。body)。getPropertyValue('--text-color'),
+                            text: '专业分布',
+                            color: getComputedStyle(document.body).getPropertyValue('--text-color'),
                             font: {
                                 size: 16
                             }
@@ -1359,8 +1289,8 @@
             // 专业分布详情图表
             const majorDetailCtx = document.getElementById('majorDistributionDetailChart').getContext('2d');
             
-            charts。majorDetailChart = new Chart(majorDetailCtx, {
-                输入: 'bar',
+            charts.majorDetailChart = new Chart(majorDetailCtx, {
+                type: 'bar',
                 data: {
                     labels: majorLabels,
                     datasets: [{
@@ -1370,7 +1300,7 @@
                         borderColor: '#0d47a1',
                         borderWidth: 1
                     }]
-                }，
+                },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
@@ -1378,15 +1308,15 @@
                         y: {
                             beginAtZero: true,
                             ticks: {
-                                color: getComputedStyle(document。body).getPropertyValue('--text-muted')
-                            }，
+                                color: getComputedStyle(document.body).getPropertyValue('--text-muted')
+                            },
                             grid: {
                                 color: getComputedStyle(document.body).getPropertyValue('--border-color')
                             }
                         },
                         x: {
                             ticks: {
-                                color: getComputedStyle(document。body).getPropertyValue('--text-muted')
+                                color: getComputedStyle(document.body).getPropertyValue('--text-muted')
                             },
                             grid: {
                                 color: getComputedStyle(document.body).getPropertyValue('--border-color')
@@ -1444,8 +1374,8 @@
                         },
                         title: {
                             display: true,
-                            text: '年级分布'，
-                            color: getComputedStyle(document。body)。getPropertyValue('--text-color')，
+                            text: '年级分布',
+                            color: getComputedStyle(document.body).getPropertyValue('--text-color'),
                             font: {
                                 size: 16
                             }
@@ -1455,40 +1385,40 @@
             });
             
             // 民族分布图表
-            const ethnicCtx = document.getElementById('ethnicDistributionChart')。getContext('2d');
+            const ethnicCtx = document.getElementById('ethnicDistributionChart').getContext('2d');
             const ethnicCounts = {};
-            studentsData。forEach(student => {
-                const ethnic = student。P;
+            studentsData.forEach(student => {
+                const ethnic = student.P;
                 ethnicCounts[ethnic] = (ethnicCounts[ethnic] || 0) + 1;
             });
             
-            const ethnicLabels = Object。keys(ethnicCounts);
-            const ethnicData = Object。values(ethnicCounts);
+            const ethnicLabels = Object.keys(ethnicCounts);
+            const ethnicData = Object.values(ethnicCounts);
             
-            charts。ethnicChart = new Chart(ethnicCtx， {
-                输入: 'doughnut'，
+            charts.ethnicChart = new Chart(ethnicCtx, {
+                type: 'doughnut',
                 data: {
-                    labels: ethnicLabels，
+                    labels: ethnicLabels,
                     datasets: [{
-                        data: ethnicData，
-                        backgroundColor: ['#4285f4'， '#34a853'， '#f9ab00']，
+                        data: ethnicData,
+                        backgroundColor: ['#4285f4', '#34a853', '#f9ab00'],
                         borderWidth: 1
                     }]
-                }，
+                },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
                         legend: {
-                            position: 'bottom'，
+                            position: 'bottom',
                             labels: {
-                                color: getComputedStyle(document。body)。getPropertyValue('--text-color')
+                                color: getComputedStyle(document.body).getPropertyValue('--text-color')
                             }
-                        }，
+                        },
                         title: {
-                            display: true，
-                            text: '民族分布'，
-                            color: getComputedStyle(document。body)。getPropertyValue('--text-color')，
+                            display: true,
+                            text: '民族分布',
+                            color: getComputedStyle(document.body).getPropertyValue('--text-color'),
                             font: {
                                 size: 16
                             }
@@ -1500,11 +1430,24 @@
 
         // 刷新数据
         function refreshData() {
-            loadDataFromServer();
+            updateStatistics();
+            renderCharts();
+            alert('数据已刷新');
+        }
+
+        // 导出数据
+        function exportData() {
+            const dataStr = JSON.stringify(studentsData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = '2025级计算机学院学生数据.json';
+            link.click();
         }
 
         // 初始化应用
-        document。addEventListener('DOMContentLoaded'， init);
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
